@@ -1,13 +1,17 @@
 'use client'
-import CommentSection from '@/Components/CommentSection'
-import { getTimeAgo } from '@/utils/functions';
+import CommentSection from '../Components/CommentSection'
+import { getTimeAgo } from '../utils/functions';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
+import Navbar from '../Components/Navbar';
+import Link from 'next/link';
+import { RotatingLines } from 'react-loader-spinner';
 
 
 export default function Home() {
 
   const [storyData, setStoryData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchStory = async () => {
@@ -16,18 +20,20 @@ export default function Home() {
       );
       const data = await response.json();
       setStoryData(data);
+      setLoading(false);
     };
     fetchStory();
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center ">
+    <main className="flex min-h-screen flex-col items-center mt-[50px] ">
       <h1 className="mb-10 text-4xl font-bold">Nested Comments</h1>
+      <Navbar />
       { 
         storyData !== null 
         ? 
         <>
-          <div className="story w-[700px] bg-[#b1b1b1] px-4 py-2 rounded-lg">
+          <div className="story w-[800px] bg-[#cfcfcf] px-4 py-2 rounded-lg">
           <div className="flex items-center">
                     <div>
                         <Image
@@ -39,7 +45,9 @@ export default function Home() {
                         />
                     </div>
                     <div>
+                      <Link href={storyData.story.url}>
                         <p className="font-bold">{storyData.story.by}</p>
+                      </Link>
                     </div>
                     <div>
                         <p className="text-gray-500 ml-2 text-sm">{getTimeAgo(storyData.story.time)}  |</p>
@@ -55,7 +63,13 @@ export default function Home() {
           <CommentSection comments={storyData.comments} />
         </>
       :
-        null
+        <RotatingLines
+          strokeColor="grey"
+          strokeWidth="4"
+          animationDuration="0.75"
+          width="36"
+          visible={true}
+        />
       }
     </main>
   )

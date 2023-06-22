@@ -59,8 +59,7 @@ export async function GET(req,res) {
       
         return storyData;
       };
-      
-      const storyData = await fetchStoryData(36425858);
+      const storyData = await fetchStoryData(36427849);
 
     return NextResponse.json(storyData);
       

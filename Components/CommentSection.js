@@ -1,10 +1,9 @@
-'use client';
-
 import React, { useEffect, useState } from "react";
 import "./CommentSection.css"; // Style sheet for the comment section
 import Image from "next/image";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
-import { getTimeAgo } from "@/utils/functions";
+import { getTimeAgo } from "../utils/functions";
+import {motion } from "framer-motion";
 
 const CommentSection = ({ comments }) => {
   const [expandedComments, setExpandedComments] = useState([]);
@@ -71,11 +70,11 @@ const CommentSection = ({ comments }) => {
                             >
                             {expandedComments.includes(comment?.id) ? <AiOutlineMinusCircle color="black"/> : <AiOutlinePlusCircle color="black"/>}{" "}
                             {expandedComments.includes(comment?.id)
-                                ? <div className="flex">
+                                ? <div className="flex text-sm mx-1">
                                     {" "}Hide{" "}
                                 </div>
                                 : 
-                                <div className="flex">
+                                <div className="flex text-sm mx-1">
                                     {" "+comment.comments.length+ " "}
                                     more comments
                                 </div> 
@@ -91,7 +90,16 @@ const CommentSection = ({ comments }) => {
         </div>
         {comment?.comments && comment?.comments?.length > 0 && (
           <div className="subComments">
-            {expandedComments.includes(comment?.id) && renderComments(comment?.comments)}
+            {expandedComments.includes(comment?.id) && 
+              <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                >
+                {renderComments(comment?.comments)}
+              </motion.div>
+            }
           </div>
         )}
       </div>
@@ -106,16 +114,16 @@ const CommentSection = ({ comments }) => {
             >
             {allCommentsExpanded ? <AiOutlineMinusCircle color="black"/> : <AiOutlinePlusCircle color="black"/>}{" "}
             {allCommentsExpanded
-                ? <div className="flex">    
+                ? <div className="flex mx-1">    
                     Collapse all
-                </div>
+                  </div>
                 :
-                <div className="flex">
-                    Expand all
-                </div>
+                  <div className="flex mx-1">
+                      Expand all
+                  </div>
             }
         </button>
-        <div className="commentSection border-l-2 border-black  w-[300px] sm:w-[600px] rounded-lg px-[10px] mb-10">
+        <div className="commentSection border-l-2 border-black  w-[300px] sm:w-[800px] rounded-lg px-[10px] mb-10">
             {renderComments(comments)}
         </div>
     </div>
