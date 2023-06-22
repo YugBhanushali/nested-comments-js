@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     const fetchStory = async () => {
       const response = await fetch(
-        `http://localhost:3000/api/hnstory`
+        `https://nested-comments-js.vercel.app/api/hnstory`
       );
       const data = await response.json();
       setStoryData(data);
