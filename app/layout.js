@@ -1,6 +1,7 @@
 import './globals.css'
 import { Inter,Roboto_Mono } from 'next/font/google'
 import Footer from '../Components/Footer'
+import { Analytics } from '@vercel/analytics/react';
 
 const inter = Roboto_Mono({ 
   weight:["400","700"],
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {1
       <body className={`${inter.className} text-[#efefef]`}>
         {children}
         <Footer/>
+        <Analytics />
       </body>
     </html>
   )
