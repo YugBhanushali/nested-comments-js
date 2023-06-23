@@ -107,7 +107,7 @@ const CommentSection = ({ comments }) => {
   };
 
   return (
-    <div className="mt-4">
+    <div className="mt-4 w-[300px] sm:w-[800px]">
         <button
             className="flex justify-center items-center toggleButton border-2 border-gray-500 rounded-2xl px-1 ml-1"
             onClick={() => toggleAllComments()}

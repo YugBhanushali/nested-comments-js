@@ -26,14 +26,14 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center mt-[50px] ">
+    <main className="flex  min-h-screen flex-col items-center mt-[50px] ">
       <h1 className="mb-10 text-4xl font-bold">Nested Comments</h1>
       <Navbar />
       { 
         storyData !== null 
         ? 
         <>
-          <div className="story w-[800px] bg-[#cfcfcf] px-4 py-2 rounded-lg">
+          <div className="story w-[300px] sm:w-[800px] bg-[#cfcfcf] px-4 py-2 rounded-lg">
           <div className="flex items-center">
                     <div>
                         <Image
