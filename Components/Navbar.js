@@ -7,7 +7,7 @@ const Navbar = () => {
     <div className='flex flex-row mb-6'>
       <Link href={"https://github.com/YugBhanushali/nested-comments-js"}>
         <AiFillGithub
-            color='black'
+            color='white'
             size={30}
         />
       </Link>

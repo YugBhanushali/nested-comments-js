@@ -34,7 +34,7 @@ export default function Home() {
         storyData !== null 
         ? 
         <>
-          <div className="story w-[300px] sm:w-[800px] bg-[#cfcfcf] px-4 py-2 rounded-lg">
+          <div className="story w-[300px] sm:w-[800px] bg-[#373737] px-4 py-2 rounded-lg">
           <div className="flex items-center">
                     <div>
                         <Image

@@ -67,7 +67,7 @@ const CommentSection = ({ comments }) => {
                             className="flex justify-center items-center border-2 border-gray-500 rounded-2xl px-1 ml-1"
                             onClick={() => toggleComment(comment?.id)}
                             >
-                            {expandedComments.includes(comment?.id) ? <AiOutlineMinusCircle color="black"/> : <AiOutlinePlusCircle color="black"/>}{" "}
+                            {expandedComments.includes(comment?.id) ? <AiOutlineMinusCircle color="white"/> : <AiOutlinePlusCircle color="white"/>}{" "}
                             {expandedComments.includes(comment?.id)
                                 ? <div className="flex text-sm mx-1">
                                     {" "}Hide{" "}
@@ -111,7 +111,7 @@ const CommentSection = ({ comments }) => {
             className="flex justify-center items-center border-2 border-gray-500 rounded-2xl px-1 ml-1"
             onClick={() => toggleAllComments()}
             >
-            {allCommentsExpanded ? <AiOutlineMinusCircle color="black"/> : <AiOutlinePlusCircle color="black"/>}{" "}
+            {allCommentsExpanded ? <AiOutlineMinusCircle color="white"/> : <AiOutlinePlusCircle color="white"/>}{" "}
             {allCommentsExpanded
                 ? <div className="flex mx-1">    
                     Collapse all
@@ -122,7 +122,7 @@ const CommentSection = ({ comments }) => {
                   </div>
             }
         </button>
-        <div className="commentSection border-l-2 border-black  w-[300px] sm:w-[800px] rounded-lg px-[10px] mb-10">
+        <div className="commentSection border-l-2 border-[#a1a1a1]  w-[300px] sm:w-[800px] rounded-lg px-[10px] mb-10">
             {renderComments(comments)}
         </div>
     </div>

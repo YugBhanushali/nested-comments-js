@@ -15,7 +15,7 @@ export const metadata = {
 export default function RootLayout({ children }) {1
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} text-[#efefef]`}>
         {children}
         <Footer/>
       </body>

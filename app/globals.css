@@ -5,7 +5,8 @@
 
 
 body {
-  background: white;
+  /* background: white; */
+  background-color: rgb(24, 24, 24);
 }
 
 .comment {
@@ -13,7 +14,7 @@ body {
 }
 
 .commentContent {
-  background-color: #d6d5d5;
+  background-color: #313131;
   padding: 8px 20px;
   border-radius: 10px;
   margin: 10px 0;
@@ -21,7 +22,9 @@ body {
 
 .subComments {
   margin-left: 16px;
-  border-left: 2px solid black;
+  border-left: 2px solid #a1a1a1;
   border-radius: 0 0 10px 20px;
   padding-left: 10px;
 }
+
+
