@@ -358,4 +358,9 @@ const storyData = {
     ]
 }
 
+let porduction = true;
+
+const WEBSITE_URL = porduction ? "https://nested-comments-js.vercel.app/" : "http://localhost:3000";
+
 export default storyData;
+export { WEBSITE_URL };

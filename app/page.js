@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import Navbar from '../Components/Navbar';
 import Link from 'next/link';
 import { RotatingLines } from 'react-loader-spinner';
+import {WEBSITE_URL} from '../utils/constant';
 
 
 export default function Home() {
@@ -16,7 +17,7 @@ export default function Home() {
   useEffect(() => {
     const fetchStory = async () => {
       const response = await fetch(
-        `https://nested-comments-js.vercel.app/api/hnstory`
+        `${WEBSITE_URL}/api/hnstory`
       );
       const data = await response.json();
       setStoryData(data);
