@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import "./CommentSection.css"; // Style sheet for the comment section
 import Image from "next/image";
 import { AiOutlineMinusCircle, AiOutlinePlusCircle } from "react-icons/ai";
 import { getTimeAgo } from "../utils/functions";
@@ -65,7 +64,7 @@ const CommentSection = ({ comments }) => {
                 <div>
                     {(comment?.comments && comment?.comments?.length > 0 && 
                         <button
-                            className="flex justify-center items-center toggleButton border-2 border-gray-500 rounded-2xl px-1 ml-1"
+                            className="flex justify-center items-center border-2 border-gray-500 rounded-2xl px-1 ml-1"
                             onClick={() => toggleComment(comment?.id)}
                             >
                             {expandedComments.includes(comment?.id) ? <AiOutlineMinusCircle color="black"/> : <AiOutlinePlusCircle color="black"/>}{" "}
@@ -109,7 +108,7 @@ const CommentSection = ({ comments }) => {
   return (
     <div className="mt-4 w-[300px] sm:w-[800px]">
         <button
-            className="flex justify-center items-center toggleButton border-2 border-gray-500 rounded-2xl px-1 ml-1"
+            className="flex justify-center items-center border-2 border-gray-500 rounded-2xl px-1 ml-1"
             onClick={() => toggleAllComments()}
             >
             {allCommentsExpanded ? <AiOutlineMinusCircle color="black"/> : <AiOutlinePlusCircle color="black"/>}{" "}

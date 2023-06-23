@@ -7,3 +7,21 @@
 body {
   background: white;
 }
+
+.comment {
+  margin-bottom: 16px;
+}
+
+.commentContent {
+  background-color: #d6d5d5;
+  padding: 8px 20px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.subComments {
+  margin-left: 16px;
+  border-left: 2px solid black;
+  border-radius: 0 0 10px 20px;
+  padding-left: 10px;
+}
