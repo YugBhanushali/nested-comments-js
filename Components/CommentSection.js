@@ -122,7 +122,7 @@ const CommentSection = ({ comments }) => {
                   </div>
             }
         </button>
-        <div className="commentSection border-l-2 border-[#a1a1a1]  w-[300px] sm:w-[800px] rounded-lg px-[10px] mb-10">
+        <div className="commentSection border-l-2 border-[#414243]  w-[300px] sm:w-[800px] rounded-lg px-[10px] mb-10">
             {renderComments(comments)}
         </div>
     </div>
